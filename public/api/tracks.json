@@ -1,0 +1,204 @@
+{
+  "service": "stopiffy",
+  "version": "0.1.0",
+  "tracks": [
+    {
+      "id": "weirdling-walk",
+      "title": "Weirdling Walk",
+      "artist": "The Tribe Orchestra",
+      "style": "synthwave",
+      "bpm": 112,
+      "root": 45,
+      "scale": "minor",
+      "seed": 8008,
+      "bars": 16,
+      "tags": [
+        "game",
+        "level1"
+      ],
+      "license": "CC0-1.0",
+      "duration": 34.3
+    },
+    {
+      "id": "glitch-highway",
+      "title": "Glitch Highway",
+      "artist": "The Simulation",
+      "style": "breaks",
+      "bpm": 140,
+      "root": 40,
+      "scale": "phrygian",
+      "seed": 9009,
+      "bars": 16,
+      "tags": [
+        "game",
+        "level2"
+      ],
+      "license": "CC0-1.0",
+      "duration": 27.4
+    },
+    {
+      "id": "overfit-boss",
+      "title": "Overfit (Boss Theme)",
+      "artist": "Clanker Choir",
+      "style": "techno",
+      "bpm": 146,
+      "root": 38,
+      "scale": "phrygian",
+      "seed": 1010,
+      "bars": 16,
+      "tags": [
+        "game",
+        "boss"
+      ],
+      "license": "CC0-1.0",
+      "duration": 26.3
+    },
+    {
+      "id": "simulation-lullaby",
+      "title": "Simulation Lullaby",
+      "artist": "The Tribe Orchestra",
+      "style": "chill",
+      "bpm": 84,
+      "root": 41,
+      "scale": "major",
+      "seed": 1111,
+      "bars": 16,
+      "tags": [
+        "game",
+        "menu"
+      ],
+      "license": "CC0-1.0",
+      "duration": 45.7
+    },
+    {
+      "id": "dee-forgot-the-date",
+      "title": "Wait, Is It Friday?",
+      "artist": "DeeDarkgloom",
+      "style": "techno",
+      "bpm": 130,
+      "root": 38,
+      "scale": "phrygian",
+      "seed": 1101,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 29.5
+    },
+    {
+      "id": "candle-countdown",
+      "title": "Ten Seconds To Candles",
+      "artist": "DeeDarkgloom",
+      "style": "house",
+      "bpm": 128,
+      "root": 43,
+      "scale": "minor",
+      "seed": 1212,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 30
+    },
+    {
+      "id": "dizzle-cake-walk",
+      "title": "Cake Walk (Frosting Mix)",
+      "artist": "Dizzle",
+      "style": "house",
+      "bpm": 124,
+      "root": 41,
+      "scale": "major",
+      "seed": 2202,
+      "bars": 16,
+      "tags": [
+        "dj",
+        "cake"
+      ],
+      "license": "CC0-1.0",
+      "duration": 31
+    },
+    {
+      "id": "boom-lucky-salvage",
+      "title": "Lucky Salvage",
+      "artist": "Bo0m",
+      "style": "breaks",
+      "bpm": 134,
+      "root": 40,
+      "scale": "minor",
+      "seed": 3303,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 28.7
+    },
+    {
+      "id": "hypnotized-spiral",
+      "title": "Spiral Down",
+      "artist": "Hypnotized",
+      "style": "techno",
+      "bpm": 126,
+      "root": 36,
+      "scale": "dorian",
+      "seed": 4404,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 30.5
+    },
+    {
+      "id": "myster-deep-end",
+      "title": "The Deep End",
+      "artist": "Myster Y. Deep",
+      "style": "chill",
+      "bpm": 118,
+      "root": 38,
+      "scale": "minor",
+      "seed": 5505,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 32.5
+    },
+    {
+      "id": "helix-double-strand",
+      "title": "Double Strand",
+      "artist": "Helix",
+      "style": "synthwave",
+      "bpm": 122,
+      "root": 45,
+      "scale": "dorian",
+      "seed": 6606,
+      "bars": 16,
+      "tags": [
+        "dj"
+      ],
+      "license": "CC0-1.0",
+      "duration": 31.5
+    },
+    {
+      "id": "kerry-birthday-anthem",
+      "title": "Queenslayer Birthday Anthem",
+      "artist": "Kerry Queenslayer",
+      "style": "house",
+      "bpm": 126,
+      "root": 43,
+      "scale": "major",
+      "seed": 7707,
+      "bars": 16,
+      "tags": [
+        "dj",
+        "birthday"
+      ],
+      "license": "CC0-1.0",
+      "duration": 30.5
+    }
+  ]
+}

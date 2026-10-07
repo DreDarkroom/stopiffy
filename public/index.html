@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stopiffy — music that stops being a problem</title>
+<meta name="description" content="Stopiffy: a free CC0 generative music service and SDK for games and apps. Not affiliated with any other music service. Obviously.">
+<style>
+:root{--bg:#0b0912;--panel:#161226;--ink:#f3eefc;--mute:#9a90b8;--acc:#ff4fd8;--acc2:#38f2c1;--line:#2a2342}
+@media (prefers-color-scheme:light){:root[data-auto]{--bg:#0b0912}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+header{padding:48px 20px 24px;max-width:960px;margin:auto}
+h1{font-size:clamp(34px,7vw,64px);margin:0;letter-spacing:-.02em;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--mute);margin:.4em 0 0}
+main{max-width:960px;margin:auto;padding:0 20px 80px}
+.player{position:sticky;top:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:16px 0;display:flex;gap:14px;align-items:center;z-index:5}
+.player canvas{flex:1;height:48px;min-width:0;background:#0006;border-radius:8px}
+.np{min-width:0;flex:0 1 220px}
+.np b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.np span{color:var(--mute);font-size:13px}
+button{background:var(--acc);color:#14001a;border:0;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer;font-size:15px}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+ul{list-style:none;margin:0;padding:0}
+li.t{display:flex;align-items:center;gap:12px;padding:12px;border-bottom:1px solid var(--line)}
+li.t .i{flex:1;min-width:0}
+li.t small{color:var(--mute)}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--mute);white-space:nowrap}
+section{margin-top:40px}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:13px}
+code{color:var(--acc2)}
+footer{color:var(--mute);font-size:13px;text-align:center;padding:30px}
+a{color:var(--acc2)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Stopiffy</h1>
+  <p class="tag">Millions of songs? No. A dozen, freshly baked from a seed, all CC0. Not affiliated with any green-logo music service. Honest.</p>
+</header>
+<main>
+  <div class="player" role="region" aria-label="Player">
+    <button id="play" aria-label="Play or pause">▶</button>
+    <div class="np"><b id="npT">Pick a track</b><span id="npA">—</span></div>
+    <canvas id="vis" width="600" height="48" aria-hidden="true"></canvas>
+  </div>
+  <ul id="list" aria-label="Tracks"></ul>
+
+  <section>
+    <h2>Use it in your game</h2>
+    <pre><code>&lt;script src="https://YOUR-HOST/sdk/stopiffy.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const sp = new Stopiffy.Client({ base: 'https://YOUR-HOST' });
+  const ctx = new AudioContext();
+  const tracks = await sp.tracks();
+  const buf = await sp.load(tracks[0]);   // AudioBuffer, loops seamlessly
+  const src = ctx.createBufferSource();
+  src.buffer = buf; src.loop = true; src.connect(ctx.destination); src.start();
+&lt;/script&gt;</code></pre>
+    <p>API: <a href="api/tracks.json">/api/tracks.json</a> · License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> — do whatever you like, credit appreciated, never required.</p>
+  </section>
+</main>
+<footer>Stopiffy v<span id="v"></span> · Built for the Weirdlings Anti-AI Tribe · Fittingly, no AI was harmed in the rendering of these tracks (they're maths).</footer>
+
+<script src="sdk/stopiffy.js"></script>
+<script>
+(async function(){
+  var sp = new Stopiffy.Client({ base: '.' });
+  document.getElementById('v').textContent = Stopiffy.VERSION;
+  var list = document.getElementById('list'), ctx, analyser, cur, src, playing = false;
+  var tracks = await sp.tracks();
+  tracks.forEach(function (t) {
+    var li = document.createElement('li'); li.className = 't';
+    li.innerHTML = '<button class="ghost" aria-label="Play ' + t.title + '">▶</button><div class="i"><b></b><br><small></small></div><span class="chip"></span><span class="chip"></span>';
+    li.querySelector('b').textContent = t.title;
+    li.querySelector('small').textContent = t.artist;
+    var chips = li.querySelectorAll('.chip'); chips[0].textContent = t.bpm + ' BPM'; chips[1].textContent = t.style;
+    li.querySelector('button').onclick = function () { start(t); };
+    list.appendChild(li);
+  });
+  async function start(t) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = ctx.createAnalyser(); analyser.fftSize = 128; analyser.connect(ctx.destination); draw();
+    }
+    await ctx.resume();
+    document.getElementById('npT').textContent = 'Baking ' + t.title + '…';
+    var buf = await sp.load(t);
+    if (src) { try { src.stop(); } catch (e) {} }
+    src = ctx.createBufferSource(); src.buffer = buf; src.loop = true; src.connect(analyser); src.start();
+    cur = t; playing = true;
+    document.getElementById('npT').textContent = t.title; document.getElementById('npA').textContent = t.artist;
+    document.getElementById('play').textContent = '❚❚';
+  }
+  document.getElementById('play').onclick = function () {
+    if (!ctx || !cur) return start(tracks[0]);
+    if (playing) { ctx.suspend(); playing = false; this.textContent = '▶'; } else { ctx.resume(); playing = true; this.textContent = '❚❚'; }
+  };
+  function draw() {
+    var c = document.getElementById('vis'), g = c.getContext('2d'), d = new Uint8Array(analyser.frequencyBinCount);
+    (function loop() {
+      analyser.getByteFrequencyData(d); g.clearRect(0, 0, c.width, c.height);
+      var w = c.width / d.length;
+      for (var i = 0; i < d.length; i++) { g.fillStyle = 'hsl(' + (300 - i * 3) + ',90%,60%)'; var h = d[i] / 255 * c.height; g.fillRect(i * w, c.height - h, w - 2, h); }
+      requestAnimationFrame(loop);
+    })();
+  }
+})();
+</script>
+</body>
+</html>
