@@ -17,7 +17,8 @@
         "level1"
       ],
       "license": "CC0-1.0",
-      "duration": 34.3
+      "duration": 34.3,
+      "beatOffset": 0
     },
     {
       "id": "glitch-highway",
@@ -34,7 +35,8 @@
         "level2"
       ],
       "license": "CC0-1.0",
-      "duration": 27.4
+      "duration": 27.4,
+      "beatOffset": 0
     },
     {
       "id": "overfit-boss",
@@ -51,7 +53,8 @@
         "boss"
       ],
       "license": "CC0-1.0",
-      "duration": 26.3
+      "duration": 26.3,
+      "beatOffset": 0
     },
     {
       "id": "simulation-lullaby",
@@ -68,7 +71,8 @@
         "menu"
       ],
       "license": "CC0-1.0",
-      "duration": 45.7
+      "duration": 45.7,
+      "beatOffset": 0
     },
     {
       "id": "dee-forgot-the-date",
@@ -84,7 +88,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 29.5
+      "duration": 29.5,
+      "beatOffset": 0
     },
     {
       "id": "candle-countdown",
@@ -100,7 +105,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 30
+      "duration": 30,
+      "beatOffset": 0
     },
     {
       "id": "dizzle-cake-walk",
@@ -117,7 +123,8 @@
         "cake"
       ],
       "license": "CC0-1.0",
-      "duration": 31
+      "duration": 31,
+      "beatOffset": 0
     },
     {
       "id": "boom-lucky-salvage",
@@ -133,7 +140,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 28.7
+      "duration": 28.7,
+      "beatOffset": 0
     },
     {
       "id": "hypnotized-spiral",
@@ -149,7 +157,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 30.5
+      "duration": 30.5,
+      "beatOffset": 0
     },
     {
       "id": "myster-deep-end",
@@ -165,7 +174,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 32.5
+      "duration": 32.5,
+      "beatOffset": 0
     },
     {
       "id": "helix-double-strand",
@@ -181,7 +191,8 @@
         "dj"
       ],
       "license": "CC0-1.0",
-      "duration": 31.5
+      "duration": 31.5,
+      "beatOffset": 0
     },
     {
       "id": "shoreline-shuffle",
@@ -198,7 +209,8 @@
         "part2"
       ],
       "license": "CC0-1.0",
-      "duration": 35.6
+      "duration": 35.6,
+      "beatOffset": 0
     },
     {
       "id": "pier-pressure",
@@ -215,7 +227,8 @@
         "part2"
       ],
       "license": "CC0-1.0",
-      "duration": 28.2
+      "duration": 28.2,
+      "beatOffset": 0
     },
     {
       "id": "mick-birthday-anthem",
@@ -233,7 +246,8 @@
         "part2"
       ],
       "license": "CC0-1.0",
-      "duration": 31
+      "duration": 31,
+      "beatOffset": 0
     },
     {
       "id": "kerry-birthday-anthem",
@@ -250,7 +264,224 @@
         "birthday"
       ],
       "license": "CC0-1.0",
-      "duration": 30.5
+      "duration": 30.5,
+      "beatOffset": 0
+    },
+    {
+      "id": "jungle-rumble",
+      "title": "Jungle Rumble",
+      "artist": "Subsonic",
+      "style": "dnb",
+      "bpm": 174,
+      "root": 38,
+      "scale": "phrygian",
+      "seed": 8808,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "energetic"
+      ],
+      "license": "CC0-1.0",
+      "duration": 22.1,
+      "beatOffset": 0
+    },
+    {
+      "id": "neon-drifter",
+      "title": "Neon Drifter",
+      "artist": "The Simulation",
+      "style": "dnb",
+      "bpm": 170,
+      "root": 40,
+      "scale": "minor",
+      "seed": 8809,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "dark"
+      ],
+      "license": "CC0-1.0",
+      "duration": 22.6,
+      "beatOffset": 0
+    },
+    {
+      "id": "aurora-breeze",
+      "title": "Aurora Breeze",
+      "artist": "Tranceiver",
+      "style": "trance",
+      "bpm": 138,
+      "root": 45,
+      "scale": "minor",
+      "seed": 9901,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "euphoric"
+      ],
+      "license": "CC0-1.0",
+      "duration": 27.8,
+      "beatOffset": 0
+    },
+    {
+      "id": "starlight-pulse",
+      "title": "Starlight Pulse",
+      "artist": "Tranceiver",
+      "style": "trance",
+      "bpm": 140,
+      "root": 41,
+      "scale": "dorian",
+      "seed": 9902,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "uplifting"
+      ],
+      "license": "CC0-1.0",
+      "duration": 27.4,
+      "beatOffset": 0
+    },
+    {
+      "id": "rainy-cafe",
+      "title": "Rainy Cafe",
+      "artist": "Coffee Beans",
+      "style": "lofi",
+      "bpm": 80,
+      "root": 43,
+      "scale": "major",
+      "seed": 1121,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "chill"
+      ],
+      "license": "CC0-1.0",
+      "duration": 48,
+      "beatOffset": 0
+    },
+    {
+      "id": "midnight-study",
+      "title": "Midnight Study",
+      "artist": "Coffee Beans",
+      "style": "lofi",
+      "bpm": 78,
+      "root": 36,
+      "scale": "minor",
+      "seed": 1122,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "focus"
+      ],
+      "license": "CC0-1.0",
+      "duration": 49.2,
+      "beatOffset": 0
+    },
+    {
+      "id": "voltage-spike",
+      "title": "Voltage Spike",
+      "artist": "Circuit Breaker",
+      "style": "electro",
+      "bpm": 128,
+      "root": 40,
+      "scale": "phrygian",
+      "seed": 3341,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "energetic"
+      ],
+      "license": "CC0-1.0",
+      "duration": 30,
+      "beatOffset": 0
+    },
+    {
+      "id": "robotic-groove",
+      "title": "Robotic Groove",
+      "artist": "Circuit Breaker",
+      "style": "electro",
+      "bpm": 130,
+      "root": 38,
+      "scale": "dorian",
+      "seed": 3342,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "funky"
+      ],
+      "license": "CC0-1.0",
+      "duration": 29.5,
+      "beatOffset": 0
+    },
+    {
+      "id": "deep-space-echo",
+      "title": "Deep Space Echo",
+      "artist": "Hypnotized",
+      "style": "techno",
+      "bpm": 125,
+      "root": 38,
+      "scale": "minor",
+      "seed": 5561,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "dark"
+      ],
+      "license": "CC0-1.0",
+      "duration": 30.7,
+      "beatOffset": 0
+    },
+    {
+      "id": "sunset-drive",
+      "title": "Sunset Drive",
+      "artist": "Helix",
+      "style": "synthwave",
+      "bpm": 115,
+      "root": 41,
+      "scale": "major",
+      "seed": 6671,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "chill"
+      ],
+      "license": "CC0-1.0",
+      "duration": 33.4,
+      "beatOffset": 0
+    },
+    {
+      "id": "broken-glass",
+      "title": "Broken Glass",
+      "artist": "Bo0m",
+      "style": "breaks",
+      "bpm": 135,
+      "root": 45,
+      "scale": "phrygian",
+      "seed": 7781,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "aggressive"
+      ],
+      "license": "CC0-1.0",
+      "duration": 28.4,
+      "beatOffset": 0
+    },
+    {
+      "id": "summer-vibes",
+      "title": "Summer Vibes",
+      "artist": "Dizzle",
+      "style": "house",
+      "bpm": 122,
+      "root": 43,
+      "scale": "major",
+      "seed": 8891,
+      "bars": 16,
+      "tags": [
+        "mood",
+        "happy"
+      ],
+      "license": "CC0-1.0",
+      "duration": 31.5,
+      "beatOffset": 0
     }
   ]
 }
