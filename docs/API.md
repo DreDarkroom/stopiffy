@@ -4,7 +4,7 @@
 - `GET /api/tracks.json` → `{ service, version, tracks: Track[] }`
 - `GET /api/tracks/:id` → `Track` (server.js only)
 
-`Track = { id, title, artist, style, bpm, root, scale, seed, bars, duration, tags[], license, url? }`
+`Track = { id, title, artist, style, bpm, root, scale, seed, bars, duration, tags[], license, beatOffset, url? }`
 
 ## SDK (`sdk/stopiffy.js`, UMD)
 - `new Stopiffy.Client({ base })` — `base` is the origin hosting `/api/tracks.json`; empty = built-in catalogue.
