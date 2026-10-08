@@ -168,7 +168,25 @@
     var p = typeof trackOrId === 'string' ? self.find(trackOrId) : Promise.resolve(trackOrId);
     return p.then(function (t) {
       if (!t) throw new Error('Unknown track');
-      if (!self._cache[t.id]) self._cache[t.id] = renderTrack(t);
+      if (!self._cache[t.id]) {
+        if (t.url) {
+          self._cache[t.id] = fetch(t.url)
+            .then(function (r) {
+              if (!r.ok) throw new Error(r.status);
+              return r.arrayBuffer();
+            })
+            .then(function (buf) {
+              var AC = typeof AudioContext !== 'undefined' ? AudioContext : (typeof webkitAudioContext !== 'undefined' ? webkitAudioContext : null);
+              if (!AC) throw new Error('AudioContext not supported');
+              var ac = new AC();
+              return new Promise(function (resolve, reject) {
+                ac.decodeAudioData(buf, resolve, reject);
+              });
+            });
+        } else {
+          self._cache[t.id] = renderTrack(t);
+        }
+      }
       return self._cache[t.id];
     });
   };
